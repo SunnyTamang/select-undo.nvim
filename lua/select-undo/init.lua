@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup(opts)
    opts = opts or {}
-  vim.keymap.set("n", "<C-s-u>", function()
+  vim.keymap.set("n", "<C-s>u", function()
     local line = vim.api.nvim_get_current_line()
     print("Selected line: " .. line)
   end
