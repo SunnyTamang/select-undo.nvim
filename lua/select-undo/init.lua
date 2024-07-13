@@ -9,7 +9,7 @@ function M.setup(opts)
   
   )
   vim.keymap.set("n","<C-s>u",function()
-    local line_nr = vim.api.nvim_win_get_cursor(0[1])
+    local line_nr = vim.api.nvim_win_get_cursor(0)[1]
     vim.cmd(line_nr .. 'undo')
   end
   )
