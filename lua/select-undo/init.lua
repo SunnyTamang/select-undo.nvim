@@ -7,7 +7,7 @@ function M.setup(opts)
    -- print("Selected line: " .. line)
   --end
   --)
-  vim.keymap.set("n", "<C-s", function()
+  vim.keymap.set("v", "<C-s", function()
     local start_line, end_line = vim.fn.line("'<"), vim.fn.line("'>")
     for line_nr = start_line, end_line do 
       local line = vim.fn.getline(line_nr)
