@@ -1,4 +1,4 @@
-# select-undo.nvim
+selell# select-undo.nvim
 
 ## Overview
 
@@ -15,7 +15,9 @@ Select-Undo is a Neovim plugin that enhances undo functionality by allowing user
  
 
 
-https://github.com/user-attachments/assets/ada51327-ee3a-42ad-add0-efb7887ace42
+https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf
+
+
 
 
 ## Installation
