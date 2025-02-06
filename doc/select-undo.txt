@@ -1,0 +1,48 @@
+*select-undo.txt*  Selective undo within visual selections
+
+Author:  Your Name
+License: Same as Neovim
+Version: 1.0.0
+
+==============================================================================
+INTRODUCTION                                                *select-undo*
+
+This plugin provides the ability to undo changes only within a visual selection,
+leaving the rest of the buffer unchanged.
+
+==============================================================================
+USAGE                                                      *select-undo-usage*
+
+1. Make a visual selection (V, v, or <C-v>)
+2. Press 'gu' (default mapping) or use :SelectUndo command
+
+==============================================================================
+SETUP                                                      *select-undo-setup*
+
+To setup the plugin with default settings:
+>
+    require('select-undo').setup()
+<
+
+Configuration options:
+>
+    require('select-undo').setup({
+        mapping = 'gu'  -- Set to false to disable mapping
+    })
+<
+
+==============================================================================
+COMMANDS                                                   *select-undo-commands*
+
+:SelectUndo                                               *:SelectUndo*
+    Undo changes only within the current visual selection.
+    Must be used with a visual selection.
+
+==============================================================================
+MAPPINGS                                                  *select-undo-mappings*
+
+gu (Visual mode)                                          *select-undo-gu*
+    Default mapping to perform selective undo on visual selection.
+    Can be changed or disabled in setup options.
+
+vim:ft=help:et:ts=2:sw=2:sts=2:norl: 
