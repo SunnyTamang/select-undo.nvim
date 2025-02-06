@@ -46,14 +46,17 @@ lua require("select-undo").setup()
 ## Usage
 
 **Undo Entire Lines**
+
 	1.	Select multiple lines in Visual Mode (V or Shift + V).
 	2.	Press gu to undo changes within the selected lines.
 
 **Undo a Partial Selection**
+
 	1.	Select part of a line in Visual Mode (v).
 	2.	Press gcu to undo only the selected portion.
 
 **Undo a Specific Line**
+
 	1.	Move to the line you want to undo.
 	2.	Press <C-s>u to undo that specific line.
 
