@@ -12,6 +12,12 @@ Select-Undo is a Neovim plugin that enhances undo functionality by allowing user
 	•	Customizable Keybindings: Default mappings are provided, but users can configure their own.
 	•	Undo by Line Number: Quickly undo a specific line using <C-s>u.
 
+ 
+
+
+https://github.com/user-attachments/assets/ada51327-ee3a-42ad-add0-efb7887ace42
+
+
 ## Installation
 
 **Using lazy.nvim**
