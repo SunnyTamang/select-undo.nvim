@@ -1,8 +1,10 @@
-selell# select-undo.nvim
+# select-undo.nvim
 
 ## Overview
 
-Select-Undo is a Neovim plugin that enhances undo functionality by allowing users to undo changes selectively. Unlike the default undo command, which reverts changes sequentially, Select-Undo enables users to undo specific lines or partial selections without affecting the rest of the file.
+select-undo is a Neovim plugin that enhances undo functionality by allowing users to undo changes selectively. Unlike the default undo command, which reverts changes sequentially, Select-Undo enables users to undo specific lines or partial selections without affecting the rest of the file.
+
+
 
 ## Features
 	•	Persistent Undo: Ensures that undo history persists even after closing Neovim.
@@ -12,8 +14,12 @@ Select-Undo is a Neovim plugin that enhances undo functionality by allowing user
 	•	Customizable Keybindings: Default mappings are provided, but users can configure their own.
 	•	Undo by Line Number: Quickly undo a specific line using <C-s>u.
 
- 
+**This is still in development phase**
 
+## Things that dont work properly
+
+- If added a line in between two lines and reverted the line value is replaced by the very next line.
+- If buffer is closed, undo doesnot work.
 
 https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf
 
