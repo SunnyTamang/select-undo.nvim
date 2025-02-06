@@ -53,12 +53,12 @@ lua require("select-undo").setup()
 **Undo a Partial Selection**
 
 	1.	Select part of a line in Visual Mode (v).
-	2.	Press gcu to undo only the selected portion.
+	2.	Press gu to undo only the selected portion.
 
 **Undo a Specific Line**
 
 	1.	Move to the line you want to undo.
-	2.	Press <C-s>u to undo that specific line.
+	2.	Press gu to undo that specific line.
 
 **Customizing Mappings**
 
