@@ -12,7 +12,7 @@ select-undo is a Neovim plugin that enhances undo functionality by allowing user
 	•	Partial Undo: Undo changes within a visual selection (gcu).
 	•	Visual Mode Integration: Works seamlessly with Neovim’s visual mode for intuitive selection-based undo.
 	•	Customizable Keybindings: Default mappings are provided, but users can configure their own.
-	•	Undo by Line Number: Quickly undo a specific line using <C-s>u.
+	
 
 **This is still in development phase**
 
@@ -43,7 +43,7 @@ https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf
 
 ```
 use {
-  "SunnyTamang/select-undo",
+  "SunnyTamang/select-undo.nvim",
   config = function()
     require("select-undo").setup()
   end
@@ -53,7 +53,7 @@ use {
 **Using vim-plug**
 
 ```
-Plug 'SunnyTamang/select-undo'
+Plug 'SunnyTamang/select-undo.nvim'
 lua require("select-undo").setup()
 ```
 
