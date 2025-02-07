@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf
 
 ```
 {
-  "SunnyTamang/select-undo",
+  "SunnyTamang/select-undo.nvim",
   config = function()
     require("select-undo").setup()
   end
