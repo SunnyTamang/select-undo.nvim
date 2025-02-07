@@ -9,7 +9,7 @@ select-undo is a Neovim plugin that enhances undo functionality by allowing user
 ## Features
 	•	Persistent Undo: Ensures that undo history persists even after closing Neovim.
 	•	Selective Line Undo: Undo only the changes within selected lines (gu).
-	•	Partial Undo: Undo changes within a visual selection (gcu).
+	•	Partial Undo: Undo changes within a visual selection (gu).
 	•	Visual Mode Integration: Works seamlessly with Neovim’s visual mode for intuitive selection-based undo.
 	•	Customizable Keybindings: Default mappings are provided, but users can configure their own.
 	
@@ -94,7 +94,7 @@ require("select-undo").setup({
   persistent_undo = true,  -- Enables persistent undo history
   mapping = true,          -- Enables default keybindings
   line_mapping = "gu",     -- Undo for entire lines
-  partial_mapping = "gcu"  -- Undo for selected characters
+  partial_mapping = "gcu"  -- Undo for selected characters -- Note: dont use this line as gu can also handle partial undo
 })
 ```
 
