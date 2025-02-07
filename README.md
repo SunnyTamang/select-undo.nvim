@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf
 
 **Using lazy.nvim**
 
-```
+```lua
 {
   "SunnyTamang/select-undo.nvim",
   config = function()
@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf
 
 **Using packer.nvim**
 
-```
+```lua
 use {
   "SunnyTamang/select-undo.nvim",
   config = function()
@@ -52,7 +52,7 @@ use {
 
 **Using vim-plug**
 
-```
+```vim
 Plug 'SunnyTamang/select-undo.nvim'
 lua require("select-undo").setup()
 ```
@@ -78,7 +78,7 @@ lua require("select-undo").setup()
 
 You can override the default keybindings in the setup function:
 
-```
+```lua
 require("select-undo").setup({
   line_mapping = "gU",    -- Change line undo mapping
   partial_mapping = "gCp" -- Change partial undo mapping
@@ -89,7 +89,7 @@ require("select-undo").setup({
 
 **Default Settings**
 
-```
+```lua
 require("select-undo").setup({
   persistent_undo = true,  -- Enables persistent undo history
   mapping = true,          -- Enables default keybindings
