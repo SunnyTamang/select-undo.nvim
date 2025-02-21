@@ -286,7 +286,7 @@ function M.setup(opts)
     if opts.mapping ~= false then
         -- Default mapping for full line undo: gu
         local line_mapping = opts.line_mapping or 'gu'
-        vim.keymap.set('v', line_mapping, ':SelectUndoLine<CR>', {
+        vim.keymap.set('x', line_mapping, ':SelectUndoLine<CR>', {
             silent = true,
             noremap = true,
             desc = "Selective undo for entire lines"
@@ -294,7 +294,7 @@ function M.setup(opts)
         
         -- Default mapping for partial undo: gcu (changed from gU)
         local partial_mapping = opts.partial_mapping or 'gcu'
-        vim.keymap.set('v', partial_mapping, ':SelectUndoPartial<CR>', {
+        vim.keymap.set('x', partial_mapping, ':SelectUndoPartial<CR>', {
             silent = true,
             noremap = true,
             desc = "Selective undo for character selection"
