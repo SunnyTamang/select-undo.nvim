@@ -1,48 +1,88 @@
 *select-undo.txt*  Selective undo within visual selections
 
-Author:  Your Name
-License: Same as Neovim
-Version: 1.0.0
+Author:  Sunny Tamang
+License: MIT
 
 ==============================================================================
 INTRODUCTION                                                *select-undo*
 
-This plugin provides the ability to undo changes only within a visual selection,
-leaving the rest of the buffer unchanged.
+Neovim's built-in undo is chronological across the whole buffer: to undo an
+older change you must first undo every change made after it. select-undo
+provides region-scoped undo instead - select lines (or part of a line) and
+revert them, leaving the rest of the buffer untouched.
 
 ==============================================================================
 USAGE                                                      *select-undo-usage*
 
-1. Make a visual selection (V, v, or <C-v>)
-2. Press 'gu' (default mapping) or use :SelectUndo command
+1. Make a visual selection (v, V, or CTRL-V)
+2. Press one of the default mappings:
+   gu   revert the newest change within the selection; press again to
+        step one change further back (safe for sloppy selections)
+   gU   revert the last change of EVERY selected line in one press,
+        even when the lines were edited at different times
+   gC   revert only the selected characters within a single line
+
+The applied revert is a single regular edit, so the native |u| undoes it
+in one step.
 
 ==============================================================================
 SETUP                                                      *select-undo-setup*
 
-To setup the plugin with default settings:
->
+Setup with default settings: >
     require('select-undo').setup()
 <
-
-Configuration options:
->
+Configuration options with their defaults: >
     require('select-undo').setup({
-        mapping = 'gu'  -- Set to false to disable mapping
+        persistent_undo = true,  -- enable 'undofile' for normal buffers
+        mapping = true,          -- create the default visual-mode mappings
+        line_mapping = "gu",     -- mapping for :SelectUndoLine
+        sweep_mapping = "gU",    -- mapping for :SelectUndoSweep
+        partial_mapping = "gC",  -- mapping for :SelectUndoPartial
+        max_history = 100,       -- undo states searched backward per press
     })
 <
+==============================================================================
+COMMANDS                                                *select-undo-commands*
+
+:SelectUndoLine                                           *:SelectUndoLine*
+    Revert the newest change that touched the selected lines. Repeat to
+    step further back, one change at a time.
+
+:SelectUndoSweep                                          *:SelectUndoSweep*
+    Revert the last change of every selected line, even when the lines
+    were edited at different times. Also reverts selected lines whose
+    edits you may consider finished - select deliberately.
+
+:SelectUndoPartial                                        *:SelectUndoPartial*
+    Revert the most recent change that touched the selected characters.
+    For selections spanning multiple lines this falls back to
+    :SelectUndoLine behavior.
 
 ==============================================================================
-COMMANDS                                                   *select-undo-commands*
+MAPPINGS                                                *select-undo-mappings*
 
-:SelectUndo                                               *:SelectUndo*
-    Undo changes only within the current visual selection.
-    Must be used with a visual selection.
+gu   (Visual mode)                                        *select-undo-gu*
+    :SelectUndoLine. Note: this shadows the built-in lowercase operator
+    |v_gu| in visual mode; change `line_mapping` if you use that.
+
+gU   (Visual mode)                                        *select-undo-gU*
+    :SelectUndoSweep. Shadows the built-in uppercase operator |v_gU|;
+    change `sweep_mapping` if you use that.
+
+gC   (Visual mode)                                        *select-undo-gC*
+    :SelectUndoPartial - selected characters only.
 
 ==============================================================================
-MAPPINGS                                                  *select-undo-mappings*
+NOTES                                                      *select-undo-notes*
 
-gu (Visual mode)                                          *select-undo-gu*
-    Default mapping to perform selective undo on visual selection.
-    Can be changed or disabled in setup options.
+- A revert never deletes lines outside the selection. Restoring deleted
+  content may expand to the whole change so the result stays coherent.
+- Stepping back past a line's creation deletes the line - its oldest
+  recorded state is "not there yet". Native |u| restores it in one step.
+- When the only change touching a character selection rewrote the whole
+  line, :SelectUndoPartial refuses (a character-level revert of unrelated
+  content would splice nonsense) and suggests :SelectUndoLine instead.
+- The search walks at most `max_history` undo states backward from the
+  current state and reports when nothing older touches the selection.
 
-vim:ft=help:et:ts=2:sw=2:sts=2:norl: 
+vim:ft=help:et:ts=8:sw=4:sts=4:norl:

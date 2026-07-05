@@ -1,8 +1,13 @@
-:SelectUndo	select-undo.txt	/*:SelectUndo*
+:SelectUndoLine	select-undo.txt	/*:SelectUndoLine*
+:SelectUndoPartial	select-undo.txt	/*:SelectUndoPartial*
+:SelectUndoSweep	select-undo.txt	/*:SelectUndoSweep*
 select-undo	select-undo.txt	/*select-undo*
 select-undo-commands	select-undo.txt	/*select-undo-commands*
+select-undo-gC	select-undo.txt	/*select-undo-gC*
+select-undo-gU	select-undo.txt	/*select-undo-gU*
 select-undo-gu	select-undo.txt	/*select-undo-gu*
 select-undo-mappings	select-undo.txt	/*select-undo-mappings*
+select-undo-notes	select-undo.txt	/*select-undo-notes*
 select-undo-setup	select-undo.txt	/*select-undo-setup*
 select-undo-usage	select-undo.txt	/*select-undo-usage*
 select-undo.txt	select-undo.txt	/*select-undo.txt*
