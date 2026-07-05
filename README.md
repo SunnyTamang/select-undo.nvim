@@ -15,7 +15,18 @@ For example: if you edit line 10 and then line 50, native undo forces you to rev
 - **Persistent Undo**: Enables `undofile` so undo history survives closing Neovim.
 - **Customizable Keybindings**: Default mappings are provided, but users can configure their own.
 
-https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf
+<!--https://github.com/user-attachments/assets/1ffd1790-94e5-4733-91b0-f4bcbe3e0adf-->
+
+
+https://github.com/user-attachments/assets/ce45d5af-971d-4fef-8a31-4d9fbf458019
+
+
+https://github.com/user-attachments/assets/9075f616-cd54-4760-b563-df258534c0cf
+
+
+https://github.com/user-attachments/assets/e216aa62-75e9-44b1-897a-32173d8e2407
+
+
 
 ## Installation
 
